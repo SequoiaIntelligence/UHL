@@ -1,0 +1,2059 @@
+<html><head><meta http-equiv="Content-Type" content="text/html"><title>MicroOLAP Database Designer HTML Diagram Report</title>
+<style> 
+hr                      {height:1px;color:#000000;}
+body                    {margin:15px 15px 70px 15px;}
+body,a,div,p,td,span    {font-family:Verdana,Tahoma,Arial,MS Sans serif;color:black;}
+/******************* Header *****************************************************/
+ .Header                {text-align:center;}
+ .HeaderTitle           {font-size:16px;font-weight:700;}
+ .HeaderDiagramName     {font-size:16px;font-weight:500;}
+ .HeaderReportDate      {font-size:10px;font-weight:500;}
+ .HeaderReportDateTitle {font-size:10px;font-weight:500;}
+ .HeaderReportDateValue {font-size:10px;font-weight:500;}
+ .HeaderContents        {font-size:16px;font-weight:700;}
+/******************* Table of Contents *************************************************/
+ .TOC                   {}
+ .TOCItem               {font-size:14px;font-weight:700;}
+a.TOCItemLink           {color:#000000;text-decoration:underline;}
+a.TOCItemLink:hover     {color:#ff0000;text-decoration:underline;}
+ .TOC1                  {}
+ .TOC1Item              {font-size:14px;font-weight:700;font-style:italic;}
+a.TOC1ItemLink          {color:#000000;text-decoration:underline;}
+a.TOC1ItemLink:hover    {color:#ff0000;text-decoration:underline;}
+ .TOC2                  {}
+ .TOC2Item              {font-size:14px;font-weight:700;font-style:italic;}
+a.TOC2ItemLink          {color:#000000;text-decoration:underline;}
+a.TOC2ItemLink:hover    {color:#ff0000;text-decoration:underline;}
+/******************* Report body *************************************************/
+.TOCItemContentHeader   {font-size:14px;font-weight:700;background-color:#FFFFCC;padding:5px 5px 5px 5px;border-bottom:1px solid black;margin-top:30px;}
+.TOC1ItemContentHeader  {font-size:14px;font-weight:700;font-style:italic;background-color:#999999;padding:5px 5px 5px 15px;color: white;margin-top:10px;}
+.TOC2ItemContentHeader  {font-size:14px;font-weight:700;font-style:italic;background-color:#999999;padding:5px 5px 5px 25px;color: white;margin-top:10px;}
+.TOC1ItemContentParent  {vertical-align:top;padding:0px 0px 0px 0px;margin-top:10px;}
+.TOC1ItemTable          {border:none;background-color:#FFFFFF;border-bottom:1px solid #000000;}
+.ModelDesc              {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.ModelAnn               {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.ImageContainer         {text-align:center;padding:4px 4px 4px 4px;margin:20px 0px 20px 0px;}
+.DescrVar               {padding:4px 10px 4px 4px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;font-weight:700;}
+.DescrVal               {padding:4px 4px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;width:100%;font-size:10px;}
+.TableDesc              {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.TableAnn               {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.RefDesc              {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.RefAnn               {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.BasicVar               {padding:4px 10px 4px 4px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;font-weight:700;}
+.BasicVal               {padding:4px 4px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;width:100%;font-size:10px;}
+.ParamsVar              {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;}
+.ParamsVal              {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;}
+.ColumnsVar             {padding:4px 4px 4px 4px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;text-align:center;}
+.ColumnsVal             {padding:4px 4px 4px 4px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;text-align:center;}
+.IndexVar               {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;text-align:center;}
+.IndexVal               {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;text-align:center;}
+.ConstraintVar          {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;}
+.ConstraintVal          {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;}
+.RuleVar                {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;}
+.RuleVal                {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;}
+.TriggerVar                {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;}
+.TriggerVal                {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;}
+.RefVar                 {padding:4px 20px 4px 20px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;}
+.RefVal                 {padding:4px 20px 4px 20px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;}
+</style>
+</head>
+<body><div class="Header">
+<p class="HeaderTitle">Physical Data Diagram</p>
+<p class="HeaderDiagramName">Finnova Schema</p>
+<p class="HeaderReportDate"><span class="HeaderReportDateTitle">Generated:</span> <span class="HeaderReportDateValue">3/9/2019 4:03:23 PM</span></p>
+<p class="HeaderContents">Table of Contents</p>
+</div>
+<hr>
+<a name="Top"></a><ul class="TOC">
+ <li class="TOCItem"><a class="TOCItemLink" href="#ModelInfo">1. Diagram Information</a>
+  <ul class="TOC1">
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#BasicInfo">1.1. Basic Information</a>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#ModelDesc">1.2. Diagram Description</a>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#ModelAnn">1.3. Diagram Annotation</a>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#ModelERD">1.4. ER Diagram</a>
+  </ul>
+ <li class="TOCItem"><a class="TOCItemLink" href="#Database">2. Database</a>
+ <li class="TOCItem"><a class="TOCItemLink" href="#Domains">3. Domains</a>
+  <ul class="TOC1">
+
+  </ul>
+ <li class="TOCItem"><a class="TOCItemLink" href="#Tables">4. Tables</a>
+  <ul class="TOC1">
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#ALERTWORDS_ART">4.1 ALERTWORDS_ART</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#ALERTWORDS_ART_Columns">4.1.1 Columns</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#ALERTWORDS_ART_Constraints">4.1.2 Constraints</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#ALERTWORDS_ART_Indexes">4.1.3 Indexes</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#ALERTWORDS_ART_Rules">4.1.4 Rules</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#ALERTWORDS_ART_Triggers">4.1.5 Triggers</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#ALERT_WORDS">4.2 ALERT_WORDS</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#ALERT_WORDS_Columns">4.2.1 Columns</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#ALERT_WORDS_Constraints">4.2.2 Constraints</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#ALERT_WORDS_Indexes">4.2.3 Indexes</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#ALERT_WORDS_Rules">4.2.4 Rules</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#ALERT_WORDS_Triggers">4.2.5 Triggers</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#Art">4.3 Art</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#Art_Columns">4.3.1 Columns</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#Art_Constraints">4.3.2 Constraints</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#Art_Indexes">4.3.3 Indexes</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#Art_Rules">4.3.4 Rules</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#Art_Triggers">4.3.5 Triggers</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#PEP">4.4 PEP</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#PEP_Columns">4.4.1 Columns</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#PEP_Constraints">4.4.2 Constraints</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#PEP_Indexes">4.4.3 Indexes</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#PEP_Rules">4.4.4 Rules</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#PEP_Triggers">4.4.5 Triggers</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#PEP_ART">4.5 PEP_ART</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#PEP_ART_Columns">4.5.1 Columns</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#PEP_ART_Constraints">4.5.2 Constraints</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#PEP_ART_Indexes">4.5.3 Indexes</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#PEP_ART_Rules">4.5.4 Rules</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#PEP_ART_Triggers">4.5.5 Triggers</a>
+    </ul>
+
+  </ul>
+	<li class="TOCItem"><a class="TOCItemLink" href="#References">5. References</a>
+  <ul class="TOC1">
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#FK_ALERTWORDS_ART_AW">5.1 FK_ALERTWORDS_ART_AW</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#FK_ALERTWORDS_ART_PEP">5.2 FK_ALERTWORDS_ART_PEP</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#FK_ALERTWORDS_ART_ART">5.3 FK_ALERTWORDS_ART_ART</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#FK_PEP_ART_1">5.4 FK_PEP_ART_1</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#FK_PEP_ART_2">5.5 FK_PEP_ART_2</a>
+
+  </ul>
+  <li class="TOCItem"><a class="TOCItemLink" href="#StoredProces">6. Stored Procedures</a>
+  <ul class="TOC1">
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#lexeme_occurrences">6.1 lexeme_occurrences</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#addArticle">6.2 addArticle</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#updatepep_art">6.3 updatepep_art</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#find_pep_art">6.4 find_pep_art</a>
+
+  </ul>
+  <li class="TOCItem"><a class="TOCItemLink" href="#Views">7. Views</a>
+  <ul class="TOC1">
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#MV_ALERT_WORDS">7.1 MV_ALERT_WORDS</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#MV_ART">7.2 MV_ART</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#MV_PEP">7.3 MV_PEP</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#MV_Sources">7.4 MV_Sources</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#MV_WORD_PEP_ART">7.5 MV_WORD_PEP_ART</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#V_PEP_ART2">7.6 V_PEP_ART2</a>
+
+  </ul>
+</ul><a name="ModelInfo"></a>
+<div class="TOCItemContentHeader">1. Diagram Information</div>
+<a name="BasicInfo"></a>
+<div class="TOC1ItemContentHeader">1.1. Basic Information</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+	 <tr><td class="BasicVar" nowrap>Project</td><td class="BasicVal">Finnova Adverse Media Search</td></tr>
+	 <tr><td class="BasicVar" nowrap>Diagram</td><td class="BasicVal">Finnova Schema</td></tr>
+	 <tr><td class="BasicVar" nowrap>Company</td><td class="BasicVal">Sequoia Intelligence</td></tr>
+	 <tr><td class="BasicVar" nowrap>Author</td><td class="BasicVal">Bil Worthington</td></tr>
+	 <tr><td class="BasicVar" nowrap>Version</td><td class="BasicVal">1.0</td></tr>
+	 <tr><td class="BasicVar" nowrap>Created</td><td class="BasicVal">3/9/2019 3:33:52 PM</td></tr>
+	 <tr><td class="BasicVar" nowrap>Last Modified</td><td class="BasicVal">3/9/2019 3:33:52 PM</td></tr>
+	</table>
+</div>
+
+<a name="ModelDesc"></a>
+<div class="TOC1ItemContentHeader">1.2. Diagram Description</div>
+<div class="TOC1ItemContentParent"><PRE class="ModelDesc">The diagram below is for the Finnova Adverse Media Search
+ Big Data Analytics project.
+It shows the entity relationships between the tables.
+Stored functions and Materialized Views.</PRE></div>
+
+<a name="ModelAnn"></a>
+<div class="TOC1ItemContentHeader">1.3. Diagram Annotation</div>
+<div class="TOC1ItemContentParent"><PRE class="ModelAnn"></PRE></div>
+
+<a name="ModelERD"></a>
+<div class="TOC1ItemContentHeader">1.4. ER Diagram</div>
+<div class="ImageContainer"><img src="Finnova Schema.png" alt="Finnova Schema" width="100%"></div>
+
+<a name="Database"></a>
+<div class="TOCItemContentHeader">2. Database</div>
+
+<a name="<%Database%>"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">This data base is for storing data for the Finnova Adverse Media Search 
+Big Data Analytics project.
+
+It runs on Amazon RDS system, t2.micro instance was found to be adquite 
+to run this DB.
+
+This DB was designed to be a Online Analytical Processing (OLAP) system. 
+After data is written, it is not expected to be changed, just read.
+
+The data base is heavily indexed for fast text searches.
+
+Materialized Views are used to help increase the performance.
+</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+	 <tr><td class="BasicVar" nowrap>Name</td><td class="BasicVal">Finnova</td></tr>
+	 <tr><td class="BasicVar" nowrap>Character Set</td><td class="BasicVal">&nbsp;</td></tr>
+	 <tr><td class="BasicVar" nowrap>Template</td><td class="BasicVal">&nbsp;</td></tr>
+	 <tr><td class="BasicVar" nowrap>Tablespace</td><td class="BasicVal">&nbsp;</td></tr>
+	 <tr><td class="BasicVar" nowrap>Comment</td><td class="BasicVal">Database for the Big Data Analytics Finnova Adverse Media Search project.
+This data base is for storing data for the Finnova Adverse Media Search 
+Big Data Analytics project.
+
+It runs on Amazon RDS system, t2.micro instance was found to be adquite 
+to run this DB.
+
+This DB was designed to be a Online Analytical Processing (OLAP) system. 
+After data is written, it is not expected to be changed, just read.
+
+The data base is heavily indexed for fast text searches.
+
+Materialized Views are used to help increase the performance.</td></tr>
+   <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE DATABASE "Finnova" 
+	OWNER = "FreiburgBill";
+
+</PRE></td></tr>
+	</table>
+</div>
+
+
+
+<a name="Domains"></a>
+<div class="TOCItemContentHeader">3 Domains</div>
+
+
+<a name="Tables"></a>
+<div class="TOCItemContentHeader">4. Tables</div>
+<a name="ALERTWORDS_ART"></a>
+<div class="TOC1ItemContentHeader">4.1 ALERTWORDS_ART</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">This table joins the Alert_Words table with the PEP table.
+It identifies the position of an alert word in an article, the PEP that is closes to that word, and the position in the article of that PEP.</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Temporary</td><td class="ParamsVar" nowrap>With OIDs</td><td class="ParamsVar" nowrap>Fill Factor</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">False</td><td class="ColumnsVal"></td></tr>
+ </table>
+</div>
+
+<a name="ALERTWORDS_ART_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Columns</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Data Type</td>
+   <td class="ColumnsVar" nowrap>Primary Key</td>
+   <td class="ColumnsVar" nowrap>Not Null</td>
+   <td class="ColumnsVar" nowrap>AutoInc</td>
+   <td class="ColumnsVar" nowrap>Flags</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Default Value</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Comment</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Primiary Key ID</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">AW_ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">FK to Alert_Words ID</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">PEP_ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">FK to PEP ID</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">AW_POS</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Position of the alert word in the article by word count.</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">PEP_POS</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Position of the PEP's last name in the article that is closes to the alert word.</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">ART_ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">FK on Art table ID field.</td>
+  </tr>
+ </table>
+</div>
+
+<a name="ALERTWORDS_ART_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Indexes</td>
+  <td class="IndexVar" nowrap>Unique</td>
+  <td class="IndexVar" nowrap>Columns</td>
+  <td class="IndexVar" nowrap>Method</td>
+  <td class="IndexVar" nowrap style="text-align:left">Comment</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">alertwords_art_aw_id_idx</td>
+<td class="IndexVal" nowrap>-</td>
+<td class="IndexVal" nowrap style="text-align:left">AW_ID</td>
+<td class="IndexVal" nowrap style="text-align:left">BTREE</td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr><tr><td class="IndexVal" nowrap style="text-align:left">alertwords_art_pep_id_idx</td>
+<td class="IndexVal" nowrap>-</td>
+<td class="IndexVal" nowrap style="text-align:left">PEP_ID</td>
+<td class="IndexVal" nowrap style="text-align:left">BTREE</td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr><tr><td class="IndexVal" nowrap style="text-align:left">alertwords_art_art_id_idx</td>
+<td class="IndexVal" nowrap>-</td>
+<td class="IndexVal" nowrap style="text-align:left">ART_ID</td>
+<td class="IndexVal" nowrap style="text-align:left">BTREE</td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="ALERTWORDS_ART_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Constraints</td>
+<td class="ConstraintVar" nowrap>Kind</td>
+<td class="ConstraintVar" nowrap>Expression</td>
+<td class="ConstraintVar" nowrap>Columns</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Comment</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>ALERTWORDS_ART_pkey</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>ID</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="ALERTWORDS_ART_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Rules</td><td class="RuleVar" nowrap>Kind</td><td class="RuleVar" nowrap>Instead</td><td class="RuleVar" nowrap>Expression</td><td class="RuleVar" nowrap>Body</td><td class="RuleVar" nowrap>Comment</td></tr>
+
+ </table>
+</div>
+
+<a name="ALERTWORDS_ART_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Triggers</td><td class="TriggerVar">Time</td><td class="TriggerVar">Procedure</td><td class="TriggerVar">Events</td><td class="TriggerVar">For Each Row</td><td class="TriggerVar">Comment</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "finnova"."ALERTWORDS_ART" (
+	"ID" SERIAL NOT NULL,
+	"AW_ID" int4,
+	"PEP_ID" int4,
+	"AW_POS" int4,
+	"PEP_POS" int4,
+	"ART_ID" int4,
+	CONSTRAINT "ALERTWORDS_ART_pkey" PRIMARY KEY("ID"),
+	CONSTRAINT "FK_ALERTWORDS_ART_AW" FOREIGN KEY ("AW_ID")
+		REFERENCES "finnova"."ALERT_WORDS"("ID")
+	MATCH SIMPLE
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION
+	NOT DEFERRABLE,
+	CONSTRAINT "FK_ALERTWORDS_ART_PEP" FOREIGN KEY ("PEP_ID")
+		REFERENCES "finnova"."PEP"("ID")
+	MATCH SIMPLE
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION
+	NOT DEFERRABLE,
+	CONSTRAINT "FK_ALERTWORDS_ART_ART" FOREIGN KEY ("ART_ID")
+		REFERENCES "finnova"."Art"("ID")
+	MATCH SIMPLE
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION
+	NOT DEFERRABLE
+)
+WITH (
+	OIDS = False
+);
+
+CREATE INDEX "alertwords_art_aw_id_idx" ON "finnova"."ALERTWORDS_ART" USING BTREE (
+	"AW_ID"
+);
+
+
+CREATE INDEX "alertwords_art_pep_id_idx" ON "finnova"."ALERTWORDS_ART" USING BTREE (
+	"PEP_ID"
+);
+
+
+CREATE INDEX "alertwords_art_art_id_idx" ON "finnova"."ALERTWORDS_ART" USING BTREE (
+	"ART_ID"
+);
+
+
+ALTER TABLE "finnova"."ALERTWORDS_ART" OWNER TO "FreiburgBill";
+
+COMMENT ON TABLE "finnova"."ALERTWORDS_ART" IS 'This table joins the Alert_Words table with the PEP table.
+It identifies the position of an alert word in an article, the PEP that is closes to that word, and the position in the article of that PEP.';
+
+COMMENT ON COLUMN "finnova"."ALERTWORDS_ART"."ID" IS 'Primiary Key ID';
+
+COMMENT ON COLUMN "finnova"."ALERTWORDS_ART"."AW_ID" IS 'FK to Alert_Words ID';
+
+COMMENT ON COLUMN "finnova"."ALERTWORDS_ART"."PEP_ID" IS 'FK to PEP ID';
+
+COMMENT ON COLUMN "finnova"."ALERTWORDS_ART"."AW_POS" IS 'Position of the alert word in the article by word count.';
+
+COMMENT ON COLUMN "finnova"."ALERTWORDS_ART"."PEP_POS" IS 'Position of the PEP''s last name in the article that is closes to the alert word.';
+
+COMMENT ON COLUMN "finnova"."ALERTWORDS_ART"."ART_ID" IS 'FK on Art table ID field.';</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="ALERT_WORDS"></a>
+<div class="TOC1ItemContentHeader">4.2 ALERT_WORDS</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Temporary</td><td class="ParamsVar" nowrap>With OIDs</td><td class="ParamsVar" nowrap>Fill Factor</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">False</td><td class="ColumnsVal"></td></tr>
+ </table>
+</div>
+
+<a name="ALERT_WORDS_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Columns</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Data Type</td>
+   <td class="ColumnsVar" nowrap>Primary Key</td>
+   <td class="ColumnsVar" nowrap>Not Null</td>
+   <td class="ColumnsVar" nowrap>AutoInc</td>
+   <td class="ColumnsVar" nowrap>Flags</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Default Value</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Comment</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">word</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(30)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+<a name="ALERT_WORDS_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Indexes</td>
+  <td class="IndexVar" nowrap>Unique</td>
+  <td class="IndexVar" nowrap>Columns</td>
+  <td class="IndexVar" nowrap>Method</td>
+  <td class="IndexVar" nowrap style="text-align:left">Comment</td>
+</tr>
+
+ </table>
+</div>
+
+<a name="ALERT_WORDS_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Constraints</td>
+<td class="ConstraintVar" nowrap>Kind</td>
+<td class="ConstraintVar" nowrap>Expression</td>
+<td class="ConstraintVar" nowrap>Columns</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Comment</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>ALERT_WORDS_pkey</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>ID</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="ALERT_WORDS_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Rules</td><td class="RuleVar" nowrap>Kind</td><td class="RuleVar" nowrap>Instead</td><td class="RuleVar" nowrap>Expression</td><td class="RuleVar" nowrap>Body</td><td class="RuleVar" nowrap>Comment</td></tr>
+
+ </table>
+</div>
+
+<a name="ALERT_WORDS_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Triggers</td><td class="TriggerVar">Time</td><td class="TriggerVar">Procedure</td><td class="TriggerVar">Events</td><td class="TriggerVar">For Each Row</td><td class="TriggerVar">Comment</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "finnova"."ALERT_WORDS" (
+	"ID" SERIAL NOT NULL,
+	"word" varchar(30) NOT NULL,
+	CONSTRAINT "ALERT_WORDS_pkey" PRIMARY KEY("ID")
+)
+WITH (
+	OIDS = False
+);
+
+ALTER TABLE "finnova"."ALERT_WORDS" OWNER TO "FreiburgBill";</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="Art"></a>
+<div class="TOC1ItemContentHeader">4.3 Art</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">Table for EventRegistry Articles</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Temporary</td><td class="ParamsVar" nowrap>With OIDs</td><td class="ParamsVar" nowrap>Fill Factor</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">False</td><td class="ColumnsVal"></td></tr>
+ </table>
+</div>
+
+<a name="Art_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Columns</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Data Type</td>
+   <td class="ColumnsVar" nowrap>Primary Key</td>
+   <td class="ColumnsVar" nowrap>Not Null</td>
+   <td class="ColumnsVar" nowrap>AutoInc</td>
+   <td class="ColumnsVar" nowrap>Flags</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Default Value</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Comment</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Primary Key</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">data</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">jsonb</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Contains returned JSON object from EventRegisty</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">URI</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Article unique URI</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">body</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">text</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">The article text removed from the EventRegistry JSON</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">concepts</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">jsonb</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">JSON concepts object removed from EventRegistry JSON</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">polarity</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">float4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Sentiment Polarity </td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">vector</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">tsvector</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">TSVECTOR of the article body.</td>
+  </tr>
+ </table>
+</div>
+
+<a name="Art_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Indexes</td>
+  <td class="IndexVar" nowrap>Unique</td>
+  <td class="IndexVar" nowrap>Columns</td>
+  <td class="IndexVar" nowrap>Method</td>
+  <td class="IndexVar" nowrap style="text-align:left">Comment</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">BODY_INDX</td>
+<td class="IndexVal" nowrap>-</td>
+<td class="IndexVal" nowrap style="text-align:left">body</td>
+<td class="IndexVal" nowrap style="text-align:left">GIST</td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr><tr><td class="IndexVal" nowrap style="text-align:left">ART_ID_INDX</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">ID</td>
+<td class="IndexVal" nowrap style="text-align:left">BTREE</td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr><tr><td class="IndexVal" nowrap style="text-align:left">VECTOR_INDX</td>
+<td class="IndexVal" nowrap>-</td>
+<td class="IndexVal" nowrap style="text-align:left">vector</td>
+<td class="IndexVal" nowrap style="text-align:left">GIN</td>
+<td class="IndexVal" nowrap style="text-align:left">GIN Index on the tsvector column 'Vector2'</td>
+</tr><tr><td class="IndexVal" nowrap style="text-align:left">URI_INDX</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">URI</td>
+<td class="IndexVal" nowrap style="text-align:left">BTREE</td>
+<td class="IndexVal" nowrap style="text-align:left">Unique URI index.
+Article URI should only exist once in the table.</td>
+</tr>
+ </table>
+</div>
+
+<a name="Art_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Constraints</td>
+<td class="ConstraintVar" nowrap>Kind</td>
+<td class="ConstraintVar" nowrap>Expression</td>
+<td class="ConstraintVar" nowrap>Columns</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Comment</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>Art_pkey</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>ID</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="Art_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Rules</td><td class="RuleVar" nowrap>Kind</td><td class="RuleVar" nowrap>Instead</td><td class="RuleVar" nowrap>Expression</td><td class="RuleVar" nowrap>Body</td><td class="RuleVar" nowrap>Comment</td></tr>
+
+ </table>
+</div>
+
+<a name="Art_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Triggers</td><td class="TriggerVar">Time</td><td class="TriggerVar">Procedure</td><td class="TriggerVar">Events</td><td class="TriggerVar">For Each Row</td><td class="TriggerVar">Comment</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "finnova"."Art" (
+	"ID" SERIAL NOT NULL,
+	"data" jsonb,
+	"URI" int4 NOT NULL,
+	"body" text,
+	"concepts" jsonb,
+	"polarity" float4,
+	"vector" tsvector,
+	CONSTRAINT "Art_pkey" PRIMARY KEY("ID")
+)
+WITH (
+	OIDS = False
+);
+
+CREATE INDEX "BODY_INDX" ON "finnova"."Art" USING GIST (
+	"body"
+)
+WITH (
+	BUFFERING = AUTO
+);
+
+
+CREATE UNIQUE INDEX "ART_ID_INDX" ON "finnova"."Art" USING BTREE (
+	"ID"
+);
+
+
+CREATE INDEX "VECTOR_INDX" ON "finnova"."Art" USING GIN (
+	"vector"
+)
+WITH (
+	FASTUPDATE = ON
+);
+
+
+CREATE UNIQUE INDEX "URI_INDX" ON "finnova"."Art" USING BTREE (
+	"URI"
+);
+
+
+ALTER TABLE "finnova"."Art" OWNER TO "FreiburgBill";
+
+COMMENT ON TABLE "finnova"."Art" IS 'Table for EventRegistry Articles';
+
+COMMENT ON COLUMN "finnova"."Art"."ID" IS 'Primary Key';
+
+COMMENT ON COLUMN "finnova"."Art"."data" IS 'Contains returned JSON object from EventRegisty';
+
+COMMENT ON COLUMN "finnova"."Art"."URI" IS 'Article unique URI';
+
+COMMENT ON COLUMN "finnova"."Art"."body" IS 'The article text removed from the EventRegistry JSON';
+
+COMMENT ON COLUMN "finnova"."Art"."concepts" IS 'JSON concepts object removed from EventRegistry JSON';
+
+COMMENT ON COLUMN "finnova"."Art"."polarity" IS 'Sentiment Polarity ';
+
+COMMENT ON COLUMN "finnova"."Art"."vector" IS 'TSVECTOR of the article body.';
+
+COMMENT ON INDEX "finnova"."VECTOR_INDX" IS 'GIN Index on the tsvector column ''Vector2''';
+
+COMMENT ON INDEX "finnova"."URI_INDX" IS 'Unique URI index.
+Article URI should only exist once in the table.';</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="PEP"></a>
+<div class="TOC1ItemContentHeader">4.4 PEP</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Temporary</td><td class="ParamsVar" nowrap>With OIDs</td><td class="ParamsVar" nowrap>Fill Factor</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">False</td><td class="ColumnsVal"></td></tr>
+ </table>
+</div>
+
+<a name="PEP_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Columns</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Data Type</td>
+   <td class="ColumnsVar" nowrap>Primary Key</td>
+   <td class="ColumnsVar" nowrap>Not Null</td>
+   <td class="ColumnsVar" nowrap>AutoInc</td>
+   <td class="ColumnsVar" nowrap>Flags</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Default Value</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Comment</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">Name</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(50)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">LastName FirstName</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">Gender</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">char(1)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">M - Male
+F- Female </td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">Language</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">char(1)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">d - Deutch
+f -  French</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">Year</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Year of birth</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Primary Key</td>
+  </tr>
+ </table>
+</div>
+
+<a name="PEP_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Indexes</td>
+  <td class="IndexVar" nowrap>Unique</td>
+  <td class="IndexVar" nowrap>Columns</td>
+  <td class="IndexVar" nowrap>Method</td>
+  <td class="IndexVar" nowrap style="text-align:left">Comment</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">PEP_ID_INDX</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">ID</td>
+<td class="IndexVal" nowrap style="text-align:left">BTREE</td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr><tr><td class="IndexVal" nowrap style="text-align:left">pep_name_idx</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">Name</td>
+<td class="IndexVal" nowrap style="text-align:left">BTREE</td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="PEP_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Constraints</td>
+<td class="ConstraintVar" nowrap>Kind</td>
+<td class="ConstraintVar" nowrap>Expression</td>
+<td class="ConstraintVar" nowrap>Columns</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Comment</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>PEP_pkey</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>ID</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="PEP_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Rules</td><td class="RuleVar" nowrap>Kind</td><td class="RuleVar" nowrap>Instead</td><td class="RuleVar" nowrap>Expression</td><td class="RuleVar" nowrap>Body</td><td class="RuleVar" nowrap>Comment</td></tr>
+
+ </table>
+</div>
+
+<a name="PEP_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Triggers</td><td class="TriggerVar">Time</td><td class="TriggerVar">Procedure</td><td class="TriggerVar">Events</td><td class="TriggerVar">For Each Row</td><td class="TriggerVar">Comment</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "finnova"."PEP" (
+	"Name" varchar(50) NOT NULL,
+	"Gender" char(1),
+	"Language" char(1),
+	"Year" int4,
+	"ID" SERIAL NOT NULL,
+	CONSTRAINT "PEP_pkey" PRIMARY KEY("ID")
+)
+WITH (
+	OIDS = False
+);
+
+CREATE UNIQUE INDEX "PEP_ID_INDX" ON "finnova"."PEP" USING BTREE (
+	"ID"
+);
+
+
+CREATE UNIQUE INDEX "pep_name_idx" ON "finnova"."PEP" USING BTREE (
+	"Name"
+);
+
+
+ALTER TABLE "finnova"."PEP" OWNER TO "FreiburgBill";
+
+COMMENT ON COLUMN "finnova"."PEP"."Name" IS 'LastName FirstName';
+
+COMMENT ON COLUMN "finnova"."PEP"."Gender" IS 'M - Male
+F- Female ';
+
+COMMENT ON COLUMN "finnova"."PEP"."Language" IS 'd - Deutch
+f -  French';
+
+COMMENT ON COLUMN "finnova"."PEP"."Year" IS 'Year of birth';
+
+COMMENT ON COLUMN "finnova"."PEP"."ID" IS 'Primary Key';</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="PEP_ART"></a>
+<div class="TOC1ItemContentHeader">4.5 PEP_ART</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">Table to join a PEP to Articles they are mentioned in.</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Temporary</td><td class="ParamsVar" nowrap>With OIDs</td><td class="ParamsVar" nowrap>Fill Factor</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">False</td><td class="ColumnsVal"></td></tr>
+ </table>
+</div>
+
+<a name="PEP_ART_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Columns</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Data Type</td>
+   <td class="ColumnsVar" nowrap>Primary Key</td>
+   <td class="ColumnsVar" nowrap>Not Null</td>
+   <td class="ColumnsVar" nowrap>AutoInc</td>
+   <td class="ColumnsVar" nowrap>Flags</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Default Value</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Comment</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">PEP_ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Foreign Key to PEP table ID column.</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">ART_ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Foreign Key to ART table ID column.</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">count</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Number of times this PEP (PEP_ID) appears in this article.</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">positions</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4[]</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">Integer array of the positions (by word count) where this PEP's last name appears.</td>
+  </tr>
+ </table>
+</div>
+
+<a name="PEP_ART_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Indexes</td>
+  <td class="IndexVar" nowrap>Unique</td>
+  <td class="IndexVar" nowrap>Columns</td>
+  <td class="IndexVar" nowrap>Method</td>
+  <td class="IndexVar" nowrap style="text-align:left">Comment</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">PEP_ART_INDX</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">PEP_ID,ART_ID</td>
+<td class="IndexVal" nowrap style="text-align:left">BTREE</td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="PEP_ART_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Constraints</td>
+<td class="ConstraintVar" nowrap>Kind</td>
+<td class="ConstraintVar" nowrap>Expression</td>
+<td class="ConstraintVar" nowrap>Columns</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Comment</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>PEP_ART_pkey</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>ID</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="PEP_ART_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Rules</td><td class="RuleVar" nowrap>Kind</td><td class="RuleVar" nowrap>Instead</td><td class="RuleVar" nowrap>Expression</td><td class="RuleVar" nowrap>Body</td><td class="RuleVar" nowrap>Comment</td></tr>
+
+ </table>
+</div>
+
+<a name="PEP_ART_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Triggers</td><td class="TriggerVar">Time</td><td class="TriggerVar">Procedure</td><td class="TriggerVar">Events</td><td class="TriggerVar">For Each Row</td><td class="TriggerVar">Comment</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "finnova"."PEP_ART" (
+	"ID" SERIAL NOT NULL,
+	"PEP_ID" int4 NOT NULL,
+	"ART_ID" int4 NOT NULL,
+	"count" int4,
+	"positions" int4[],
+	CONSTRAINT "PEP_ART_pkey" PRIMARY KEY("ID"),
+	CONSTRAINT "FK_PEP_ART_1" FOREIGN KEY ("PEP_ID")
+		REFERENCES "finnova"."PEP"("ID")
+	MATCH SIMPLE
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION
+	NOT DEFERRABLE,
+	CONSTRAINT "FK_PEP_ART_2" FOREIGN KEY ("ART_ID")
+		REFERENCES "finnova"."Art"("ID")
+	MATCH SIMPLE
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION
+	NOT DEFERRABLE
+)
+WITH (
+	OIDS = False
+);
+
+CREATE UNIQUE INDEX "PEP_ART_INDX" ON "finnova"."PEP_ART" USING BTREE (
+	"PEP_ID", 
+	"ART_ID"
+);
+
+
+ALTER TABLE "finnova"."PEP_ART" OWNER TO "FreiburgBill";
+
+COMMENT ON TABLE "finnova"."PEP_ART" IS 'Table to join a PEP to Articles they are mentioned in.';
+
+COMMENT ON COLUMN "finnova"."PEP_ART"."PEP_ID" IS 'Foreign Key to PEP table ID column.';
+
+COMMENT ON COLUMN "finnova"."PEP_ART"."ART_ID" IS 'Foreign Key to ART table ID column.';
+
+COMMENT ON COLUMN "finnova"."PEP_ART"."count" IS 'Number of times this PEP (PEP_ID) appears in this article.';
+
+COMMENT ON COLUMN "finnova"."PEP_ART"."positions" IS 'Integer array of the positions (by word count) where this PEP''s last name appears.';</PRE></td></tr>
+ </table>
+</div>
+</div>
+
+
+<a name="References"></a>
+<div class="TOCItemContentHeader">5. References</div>
+<a name="FK_ALERTWORDS_ART_AW"></a>
+<div class="TOC1ItemContentHeader">5.1 FK_ALERTWORDS_ART_AW</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Parent Table</td>
+   <td class="RefVar" nowrap>Child Table</td>
+   <td class="RefVar" nowrap>Delete Action</td>
+   <td class="RefVar" nowrap>Update Action</td>
+   <td class="RefVar" nowrap style="width:100%">Link</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>ALERT_WORDS</td>
+   <td class="RefVal" nowrap>ALERTWORDS_ART</td>
+   <td class="RefVal" nowrap>NO ACTION</td>
+   <td class="RefVal" nowrap>NO ACTION</td>
+   <td class="RefVal" nowrap>ID=AW_ID
+</td>
+  </tr>
+ </table>
+</div>
+<a name="FK_ALERTWORDS_ART_PEP"></a>
+<div class="TOC1ItemContentHeader">5.2 FK_ALERTWORDS_ART_PEP</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Parent Table</td>
+   <td class="RefVar" nowrap>Child Table</td>
+   <td class="RefVar" nowrap>Delete Action</td>
+   <td class="RefVar" nowrap>Update Action</td>
+   <td class="RefVar" nowrap style="width:100%">Link</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>PEP</td>
+   <td class="RefVal" nowrap>ALERTWORDS_ART</td>
+   <td class="RefVal" nowrap>NO ACTION</td>
+   <td class="RefVal" nowrap>NO ACTION</td>
+   <td class="RefVal" nowrap>ID=PEP_ID
+</td>
+  </tr>
+ </table>
+</div>
+<a name="FK_ALERTWORDS_ART_ART"></a>
+<div class="TOC1ItemContentHeader">5.3 FK_ALERTWORDS_ART_ART</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Parent Table</td>
+   <td class="RefVar" nowrap>Child Table</td>
+   <td class="RefVar" nowrap>Delete Action</td>
+   <td class="RefVar" nowrap>Update Action</td>
+   <td class="RefVar" nowrap style="width:100%">Link</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>Art</td>
+   <td class="RefVal" nowrap>ALERTWORDS_ART</td>
+   <td class="RefVal" nowrap>NO ACTION</td>
+   <td class="RefVal" nowrap>NO ACTION</td>
+   <td class="RefVal" nowrap>ID=ART_ID
+</td>
+  </tr>
+ </table>
+</div>
+<a name="FK_PEP_ART_1"></a>
+<div class="TOC1ItemContentHeader">5.4 FK_PEP_ART_1</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Parent Table</td>
+   <td class="RefVar" nowrap>Child Table</td>
+   <td class="RefVar" nowrap>Delete Action</td>
+   <td class="RefVar" nowrap>Update Action</td>
+   <td class="RefVar" nowrap style="width:100%">Link</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>PEP</td>
+   <td class="RefVal" nowrap>PEP_ART</td>
+   <td class="RefVal" nowrap>NO ACTION</td>
+   <td class="RefVal" nowrap>NO ACTION</td>
+   <td class="RefVal" nowrap>ID=PEP_ID
+</td>
+  </tr>
+ </table>
+</div>
+<a name="FK_PEP_ART_2"></a>
+<div class="TOC1ItemContentHeader">5.5 FK_PEP_ART_2</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Parent Table</td>
+   <td class="RefVar" nowrap>Child Table</td>
+   <td class="RefVar" nowrap>Delete Action</td>
+   <td class="RefVar" nowrap>Update Action</td>
+   <td class="RefVar" nowrap style="width:100%">Link</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>Art</td>
+   <td class="RefVal" nowrap>PEP_ART</td>
+   <td class="RefVal" nowrap>NO ACTION</td>
+   <td class="RefVal" nowrap>NO ACTION</td>
+   <td class="RefVal" nowrap>ID=ART_ID
+</td>
+  </tr>
+ </table>
+</div>
+
+
+<a name="StoredProces"></a>
+<div class="TOCItemContentHeader">6. Stored Procedures</div>
+<a name="lexeme_occurrences"></a>
+<div class="TOC1ItemContentHeader">6.1 lexeme_occurrences</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">Parameters in :
+_lexemes a tsvector that is to be searched
+-word  a word to search the tesvector for
+-config  language config, e.g. 'german'
+Parameters out:
+lexeme_count number found
+lexeme_positions integer array of positions where they were found.</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Param Name</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Param Type</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Data Type</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">_lexemes</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">IN</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">tsvector</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">_word</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">IN</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">text</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">_config</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">IN</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">lexeme_count</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">OUT</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">lexeme_positions</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">OUT</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4[]</td>
+  </tr>
+ </table>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE OR REPLACE FUNCTION "finnova"."lexeme_occurrences" (IN _lexemes tsvector,
+	IN _word text,
+	IN _config int4,
+	OUT lexeme_count int4,
+	OUT lexeme_positions int4[]) 	
+RETURNS record AS
+$BODY$
+DECLARE
+--   _lexemes              tsvector := to_tsvector (_config, _document);
+   _searched_lexeme      tsvector :=  strip (to_tsvector (_config, _word));
+   _occurences_pattern   TEXT := _searched_lexeme::TEXT || ':([0-9,]+)';
+   _occurences_list      TEXT
+      := substring (_lexemes::TEXT, _occurences_pattern);
+BEGIN
+   SELECT count (a), array_agg (a::INT)
+     FROM regexp_split_to_table (_occurences_list, ',') a
+    WHERE _searched_lexeme::TEXT != ''           -- preventing false positives
+     INTO lexeme_count, lexeme_positions;
+
+   RETURN;
+END
+$BODY$
+	LANGUAGE plpgsql
+	CALLED ON NULL INPUT
+	VOLATILE
+	EXTERNAL SECURITY INVOKER
+	COST 100;
+
+COMMENT ON FUNCTION "finnova"."lexeme_occurrences" (IN _lexemes tsvector,
+	IN _word text,
+	IN _config int4,
+	OUT lexeme_count int4,
+	OUT lexeme_positions int4[]) IS 'Parameters in :
+_lexemes a tsvector that is to be searched
+-word  a word to search the tesvector for
+-config  language config, e.g. ''german''
+Parameters out:
+lexeme_count number found
+lexeme_positions integer array of positions where they were found.';
+
+ALTER FUNCTION "finnova"."lexeme_occurrences" (IN _lexemes tsvector,
+	IN _word text,
+	IN _config int4,
+	OUT lexeme_count int4,
+	OUT lexeme_positions int4[]) OWNER TO "FreiburgBill";
+
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="addArticle"></a>
+<div class="TOC1ItemContentHeader">6.2 addArticle</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">This function is used for adding articles and associating a PEP with them.  It first checks if there are any articles already in the database that are at least 80% similar to the new one with the PEP in them.  If articles are found that are mroe than 80% similar to the passed in one, the passed in PEP is associated with the most simlar article  in the PEP_ART table.  
+If no similar articles are found, the new one will be inserted into the Art table.</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Param Name</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Param Type</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Data Type</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">PEP_ID</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">IN</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">ArticleJSON</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">IN</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">jsonb</td>
+  </tr>
+ </table>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE OR REPLACE FUNCTION "finnova"."addArticle" (IN PEP_ID int4, IN ArticleJSON jsonb) 	
+RETURNS varchar AS
+$BODY$
+DECLARE
+   retMessg     CHARACTER VARYING;
+   errMessg     CHARACTER VARYING;
+   art_id       INTEGER;
+   pep_art_id   INTEGER;
+   uriInt       INTEGER;
+   countDups    INTEGER;
+   jsonURI      TEXT;
+   jsonBody     TEXT;
+   data         JSONB;
+   concepts     JSONB;
+BEGIN
+   uriInt = ("ArticleJSON" ->> 'uri'::TEXT);
+   jsonBody = ("ArticleJSON" ->> 'body'::TEXT);
+   concepts = ("ArticleJSON" ->> 'concepts'::TEXT);
+   retMessg = "ArticleJSON" -> 'title';
+
+   -- see if any existing articles with the current PEP in the them are
+   -- more than 80% similar to this new one,
+   -- if so, consider it a duplicate
+   -- get the art_id of the most similar article
+	
+	SELECT s."ID"
+	INTO art_id
+	FROM (
+		SELECT "ID", similarity(body, jsonBody) 
+		FROM finnova."Art" a
+		WHERE a."body" LIKE (SELECT '%' || lastname || '%' 
+							 FROM finnova."MV_PEP"
+							 WHERE "ID" = "PEP_ID")		-- only check articles that have the current PEP in them.					  
+		ORDER BY similarity DESC -- order results descending to find the most similar article
+	) s  
+	WHERE similarity > 0.80
+	LIMIT 1;	-- take the top, most similar article_id	
+	
+   IF (art_id IS NOT NULL) THEN
+   		retMessg = 'DUPLICATE: ' || retMessg;
+   ELSE -- New article to be added.
+
+	   -- full original JSON object is too large for indexing
+	   -- remove the 'body' and 'concepts' elements to reduce its size.
+	   -- those elements will get saved in their own columns
+	   SELECT "ArticleJSON"::JSONB - 'body' - 'concepts'
+		 INTO data;
+	
+	   INSERT INTO finnova."Art" ("URI", "body", "concepts", "data")
+			VALUES (uriInt::INTEGER, jsonBody::TEXT, concepts::JSONB, data::JSONB);
+	
+	   -- find the art_id of the article that was just inserted
+	   SELECT a."ID"
+		 INTO art_id
+		 FROM finnova."Art" a
+		WHERE a."URI" = uriInt;
+	END IF;
+
+   -- Make an entry in the PEP_ART table for the pep and article
+   -- if it was an article that was already in the database
+   -- there is a chance that there is already an entry for it and the pep
+   -- so on conflict do nothing.
+   INSERT INTO finnova."PEP_ART" ("PEP_ID", "ART_ID")
+        VALUES ("PEP_ID", art_id)
+   ON CONFLICT DO NOTHING;
+
+   RETURN retMessg;
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      RAISE INFO 'Error Name:%', SQLERRM;
+      RAISE INFO 'Error State:%', SQLSTATE;
+      RETURN 'Error Will Robinson! ' || SQLERRM;
+END;
+$BODY$
+	LANGUAGE plpgsql
+	CALLED ON NULL INPUT
+	VOLATILE
+	EXTERNAL SECURITY INVOKER
+	COST 100;
+
+COMMENT ON FUNCTION "finnova"."addArticle" (IN PEP_ID int4, IN ArticleJSON jsonb) IS 'This function is used for adding articles and associating a PEP with them.  It first checks if there are any articles already in the database that are at least 80% similar to the new one with the PEP in them.  If articles are found that are mroe than 80% similar to the passed in one, the passed in PEP is associated with the most simlar article  in the PEP_ART table.  
+If no similar articles are found, the new one will be inserted into the Art table.';
+
+ALTER FUNCTION "finnova"."addArticle" (IN PEP_ID int4, IN ArticleJSON jsonb) OWNER TO "FreiburgBill";
+
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="updatepep_art"></a>
+<div class="TOC1ItemContentHeader">6.3 updatepep_art</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">This function searches through all articles to ensure that all the PEPs in them are properly associtated with them in the PEP_ART table, along with how many times the PEP is in the article and the word positions of the PEP.</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Param Name</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Param Type</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Data Type</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">p_id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">IN</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+  </tr>
+ </table>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE OR REPLACE FUNCTION "finnova"."updatepep_art" (IN p_id int4) 	
+RETURNS text AS
+$BODY$
+DECLARE
+   pep                   RECORD;
+   art_id                INTEGER;
+   b_art_id              INTEGER;
+   pep_id                INTEGER;
+   search_name           TEXT;
+   lexeme_count          INTEGER;
+   lexeme_positions      INTEGER [];
+   _lexemes              tsvector;
+   _searched_lexeme      tsvector;
+   _occurences_pattern   TEXT;
+   _occurences_list      TEXT;
+BEGIN
+   FOR art_id IN   SELECT a."ID" AS art_id
+                     FROM finnova."Art" a
+                    WHERE a."ID" > p_id
+                 ORDER BY art_id
+   LOOP
+      RAISE NOTICE 'Art_ID = % ', art_id;
+
+      -- For every Article ID
+      -- See if PEP_ID exists for it in PEP_ART
+      FOR pep IN   SELECT p."ID" AS pep_id, p."lastname", p."searchname"
+                     FROM finnova."MV_PEP" p
+                 ORDER BY pep_id
+      LOOP
+         --
+         IF NOT EXISTS
+               (SELECT *
+                  FROM finnova."PEP_ART" pa
+                 WHERE pa."ART_ID" = art_id AND pa."PEP_ID" = pep.pep_id)
+         THEN
+            -- The current PEP_ID is not associated with the current ART_ID
+            -- in the PEP_ART Table
+            -- See if the current PEP name is in this article
+
+            IF EXISTS
+                  (SELECT *
+                    FROM finnova."Art" a
+                   WHERE     a."ID" = art_id
+                         AND a.body LIKE ('%' || pep.searchname || '%'))
+            THEN
+               -- PEP exists in this article
+               -- add a new PEP_ART entry for it
+
+               INSERT INTO finnova."PEP_ART" ("PEP_ID", "ART_ID")
+                    VALUES (pep.pep_id, art_id);
+
+               RAISE NOTICE
+               'SearchName = % Art_ID = % PEP_ID = %',
+               pep.searchname, art_id, pep.pep_id;
+            END IF;                              -- PEP exists in this article
+         END IF;                 -- IF NOT EXISTS PEP_ID and ART_ID in PEP_ART
+		       
+		-- Now update the count of the current PEP  for the current article
+        -- in the PEP_ART table.
+		  SELECT a.vector
+			INTO _lexemes
+			FROM finnova."Art" a
+		   WHERE "ID" = art_id;
+	
+		  _searched_lexeme := strip (to_tsvector ('german', pep.lastname));
+		  _occurences_pattern := _searched_lexeme::TEXT || ':([0-9,]+)';
+		  _occurences_list := substring (_lexemes::TEXT, _occurences_pattern);
+	
+		  SELECT count (a), array_agg (a::INT)
+			FROM regexp_split_to_table (_occurences_list, ',') a
+		   WHERE _searched_lexeme::TEXT != ''        -- preventing false positives
+			INTO lexeme_count, lexeme_positions;
+	
+		  UPDATE finnova."PEP_ART" pa
+			 SET count = lexeme_count, positions = lexeme_positions
+		   WHERE pa."ART_ID" = art_id AND pa."PEP_ID" = pep.pep_id;		 
+		 		 
+      END LOOP;                                                -- through PEPs
+
+
+   END LOOP;                                               -- through Articles
+
+   RETURN 'All done!';
+END;
+$BODY$
+	LANGUAGE plpgsql
+	CALLED ON NULL INPUT
+	VOLATILE
+	EXTERNAL SECURITY INVOKER
+	COST 100;
+
+COMMENT ON FUNCTION "finnova"."updatepep_art" (IN p_id int4) IS 'This function searches through all articles to ensure that all the PEPs in them are properly associtated with them in the PEP_ART table, along with how many times the PEP is in the article and the word positions of the PEP.';
+
+ALTER FUNCTION "finnova"."updatepep_art" (IN p_id int4) OWNER TO "FreiburgBill";
+
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="find_pep_art"></a>
+<div class="TOC1ItemContentHeader">6.4 find_pep_art</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">This function is used to find the location of alert words in an article and the nearest PEP to that word.  At the end it inserts the alert word, PEP, and article IDs into the ALERTWORDS_ART table and along with the word position of the alert word and PEP in the articles.</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Param Name</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Param Type</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Data Type</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">p_id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">IN</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+  </tr>
+ </table>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE OR REPLACE FUNCTION "finnova"."find_pep_art" (IN p_id int4) 	
+RETURNS text AS
+$BODY$
+DECLARE
+   aword                 RECORD;
+   pep                   RECORD;
+   pepart                RECORD;
+   art                   RECORD;
+   list                  RECORD;
+   art_id                INTEGER;
+   b_art_id              INTEGER;
+   pep_id                INTEGER;
+   closest_pep           INTEGER;
+   closest_pos           INTEGER;
+   aword_count           INTEGER;
+   aword_positions       INTEGER [];
+   search_name           TEXT;
+   _lexemes              tsvector;
+   _searched_lexeme      tsvector;
+   _occurences_pattern   TEXT;
+   _occurences_list      TEXT;
+BEGIN
+   -- get list of articles that have alert words in them
+   FOR art IN   SELECT a."ID", a."vector"
+                  FROM finnova."MV_ART" a
+                 WHERE a."ID" > p_id AND a."alert" = TRUE
+              ORDER BY art_id
+   LOOP
+      RAISE NOTICE 'Art_ID = % ', art."ID";
+
+      -- For every Article ID
+      -- Check every alert word
+      FOR aword IN SELECT * 
+                     FROM finnova."ALERT_WORDS" aw
+      LOOP
+         --
+         SELECT finnova.lexeme_occurrences (art.vector, aword."word", 'german')
+           INTO list;
+
+         RAISE NOTICE '>>>>>>>>>>>>>> List = % %', list, aword."word";
+
+         _lexemes := art.vector;
+         _searched_lexeme := strip (to_tsvector ('german', aword."word"));
+         _occurences_pattern := _searched_lexeme::TEXT || ':([0-9,]+)';
+         _occurences_list := substring (_lexemes::TEXT, _occurences_pattern);
+
+         SELECT count (a), array_agg (a::INT)
+           FROM regexp_split_to_table (_occurences_list, ',') a
+          WHERE _searched_lexeme::TEXT != ''     -- preventing false positives
+           INTO aword_count, aword_positions;
+
+          
+         FOR counter IN 1 .. aword_count
+         LOOP
+            RAISE NOTICE 'Counter: % %', aword_positions[counter], aword_count;
+           -- For the current alert word and its current position
+           -- find the nearest PEP and its position.
+           
+          closest_pep := 0;  -- should end up with the ID of the closest PEP
+          closest_pos := 0;  -- should end up with the position of the closest PEP
+          
+          -- Check all the PEPs that are associated with this article
+          
+         	FOR pepart IN SELECT * 
+          				FROM finnova."PEP_ART" 
+          				WHERE "ART_ID" = art."ID"
+		 	LOOP
+		 	    RAISE NOTICE 'PEP_ART PEP_ID: % %', pepart."PEP_ID", pepart."positions";
+		 		FOR pep_pos IN 1..pepart."count" -- loop t 
+          		LOOP
+          			RAISE NOTICE 'PEP POS : %', pepart."positions"[pep_pos];
+          			IF pepart."positions"[pep_pos] < aword_positions[counter]
+          			AND pepart."positions"[pep_pos] > closest_pos
+          			THEN
+          				-- if the current pep position is before the alert word position
+          				-- and it is after the last found closest position
+          				-- update the closest postion and closest pep
+          				RAISE NOTICE 'Before Closest PEP and POS: % %', closest_pep, closest_pos;
+          				closest_pep := pepart."PEP_ID";
+          			    closest_pos := pepart."positions"[pep_pos];
+          			    RAISE NOTICE 'After Closest PEP and POS: % %', closest_pep, closest_pos;
+          		 	END IF;          		
+           		END LOOP; -- positions of pep in article        		
+           		
+            END LOOP; -- pep_arts 
+            
+	         IF closest_pep > 0 THEN
+	            -- if a pep was found
+	            -- Add an entry in the ALERTWORDS_ART table 
+	            -- for the values found above.
+	            
+	            INSERT INTO finnova."ALERTWORDS_ART" ("AW_ID", "PEP_ID", "AW_POS", "PEP_POS", "ART_ID")
+	            VALUES (aword."ID", closest_pep, aword_positions[counter], closest_pos, art."ID");
+	        END IF;                
+ 
+         END LOOP;  -- positions of alert words
+      END LOOP;  -- alert words loop
+   END LOOP;     -- article loop
+
+   RETURN 'All done!';
+END;
+$BODY$
+	LANGUAGE plpgsql
+	CALLED ON NULL INPUT
+	VOLATILE
+	EXTERNAL SECURITY INVOKER
+	COST 100;
+
+COMMENT ON FUNCTION "finnova"."find_pep_art" (IN p_id int4) IS 'This function is used to find the location of alert words in an article and the nearest PEP to that word.  At the end it inserts the alert word, PEP, and article IDs into the ALERTWORDS_ART table and along with the word position of the alert word and PEP in the articles.';
+
+ALTER FUNCTION "finnova"."find_pep_art" (IN p_id int4) OWNER TO "FreiburgBill";
+
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+
+
+<a name="Views"></a>
+<div class="TOCItemContentHeader">7. Views</div>
+<a name="MV_ALERT_WORDS"></a>
+<div class="TOC1ItemContentHeader">7.1 MV_ALERT_WORDS</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">List the number of documents and number of times the alert words appear.</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE MATERIALIZED VIEW "finnova"."MV_ALERT_WORDS" AS
+	SELECT ts_stat.word,
+    ts_stat.ndoc,
+    ts_stat.nentry
+   FROM ts_stat('SELECT to_tsvector(''german'', body) from finnova."Art"'::text) ts_stat(word, ndoc, nentry)
+  WHERE (ts_stat.word IN ( SELECT "substring"(replace((to_tsvector('german'::regconfig, ("ALERT_WORDS".word)::text))::text, ''':1'::text, ''::text), 2) AS "substring"
+           FROM finnova."ALERT_WORDS"));
+
+COMMENT ON VIEW "finnova"."MV_ALERT_WORDS" IS 'List the number of documents and number of times the alert words appear.';
+
+
+ALTER TABLE "finnova"."MV_ALERT_WORDS" OWNER TO "FreiburgBill";
+
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="MV_ART"></a>
+<div class="TOC1ItemContentHeader">7.2 MV_ART</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">Materialized View of the Art (articles) table with the JSONB data column elements separated into their own columns and the body of the article as a tsvector column.</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE MATERIALIZED VIEW "finnova"."MV_ART" AS
+	SELECT (a.data ->> 'uri'::text) AS uri,
+    (a.data ->> 'title'::text) AS title,
+    (a.data ->> 'url'::text) AS url,
+    (a.data ->> 'image'::text) AS urltoimage,
+    (a.data ->> 'dateTime'::text) AS publishedat,
+    ((a.data -> 'source'::text) ->> 'title'::text) AS source,
+    (((a.data #>> '{categories,0}'::text[]))::json ->> 'uri'::text) AS category,
+    (((a.data #>> '{authors,0}'::text[]))::json ->> 'name'::text) AS author,
+    (a.data ->> 'shares'::text) AS shares,
+    a."ID",
+    (lower(a.body) ~ similar_escape((((('%(bestechung|geldwäsche|korruption|schmiergelder|waffenhandel|'::text || 'drogenhandel|steuerhinterziehung|umweltverschmutzung|blutdiamanten|'::text) || 'scheeballsysteme|insiderhandel|vorteilsnahme|ungetreue geschäftsführung|'::text) || 'käuflich|schwarze kasse|schwarzgeld|veruntreuung|unterschlagung|beeinflussung|'::text) || 'Ponzi|betrug)%'::text), NULL::text)) AS alert,
+    a.polarity,
+    (a.data ->> 'location'::text) AS location,
+    (a.data ->> 'evetURI'::text) AS eventuri,
+    (a.data ->> 'storyURI'::text) AS storyuri,
+    a.body,
+    to_tsvector('german'::regconfig, a.body) AS vector
+   FROM finnova."Art" a;
+
+COMMENT ON VIEW "finnova"."MV_ART" IS 'Materialized View of the Art (articles) table with the JSONB data column elements separated into their own columns and the body of the article as a tsvector column.';
+
+
+ALTER TABLE "finnova"."MV_ART" OWNER TO "FreiburgBill";
+
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="MV_PEP"></a>
+<div class="TOC1ItemContentHeader">7.3 MV_PEP</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">Materialized View of the PEP table.
+Calculates age from year of birth,
+shows total number of articles per PEP,
+shows earliest date of an article per PEP,
+shows latest date of an article per PEP,
+shows the min, man, and avg sentiment polarity per PEP.</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE MATERIALIZED VIEW "finnova"."MV_PEP" AS
+	SELECT p."ID",
+        CASE
+            WHEN (substr((p."Name")::text, 1, 3) = 'de '::text) THEN btrim("substring"((p."Name")::text, 'de [^ ]*'::text))
+            ELSE btrim(substr((p."Name")::text, 1, "position"((p."Name")::text, ' '::text)))
+        END AS lastname,
+        CASE
+            WHEN (substr((p."Name")::text, 1, 3) = 'de '::text) THEN btrim("substring"((p."Name")::text, '(?:\S+ ){2}(.*)'::text))
+            ELSE btrim(substr((p."Name")::text, "position"((p."Name")::text, ' '::text)))
+        END AS firstname,
+        CASE
+            WHEN (substr((p."Name")::text, 1, 3) = 'de '::text) THEN (("substring"((p."Name")::text, '(?:\S+ ){2}(.*)'::text) || ' '::text) || "substring"((p."Name")::text, 'de [^ ]*'::text))
+            ELSE ((btrim(substr((p."Name")::text, "position"((p."Name")::text, ' '::text))) || ' '::text) || btrim(substr((p."Name")::text, 1, "position"((p."Name")::text, ' '::text))))
+        END AS searchname,
+    p."Gender",
+    p."Language",
+    p."Year",
+    (date_part('year'::text, CURRENT_DATE) - (p."Year")::double precision) AS age,
+    s.num_articles,
+    s.earliest,
+    s.latest,
+    s.min,
+    s.max,
+    s.avg,
+    s.num_alerts
+   FROM (finnova."PEP" p
+     LEFT JOIN ( SELECT pa."PEP_ID",
+            count(*) AS num_articles,
+            ( SELECT count(*) AS count
+                   FROM finnova."V_PEP_ART2" v
+                  WHERE ((v.alert = true) AND (v."PEP_ID" = pa."PEP_ID"))) AS num_alerts,
+            min((a.data ->> 'dateTime'::text)) AS earliest,
+            max((a.data ->> 'dateTime'::text)) AS latest,
+            min(a.polarity) AS min,
+            max(a.polarity) AS max,
+            avg(a.polarity) AS avg
+           FROM (finnova."Art" a
+             LEFT JOIN finnova."PEP_ART" pa ON ((a."ID" = pa."ART_ID")))
+          GROUP BY pa."PEP_ID") s ON ((p."ID" = s."PEP_ID")));
+
+COMMENT ON VIEW "finnova"."MV_PEP" IS 'Materialized View of the PEP table.
+Calculates age from year of birth,
+shows total number of articles per PEP,
+shows earliest date of an article per PEP,
+shows latest date of an article per PEP,
+shows the min, man, and avg sentiment polarity per PEP.';
+
+
+ALTER TABLE "finnova"."MV_PEP" OWNER TO "FreiburgBill";
+
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="MV_Sources"></a>
+<div class="TOC1ItemContentHeader">7.4 MV_Sources</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE MATERIALIZED VIEW "finnova"."MV_Sources" AS
+	SELECT v.source,
+    count(v.article_id) AS num_articles,
+    min(v.publishedat) AS earliest,
+    max(v.publishedat) AS latest,
+    min(v.polarity) AS min,
+    max(v.polarity) AS max,
+    avg(v.polarity) AS avg,
+    count(
+        CASE
+            WHEN v.alert THEN 1
+            ELSE NULL::integer
+        END) AS num_alerts
+   FROM finnova."V_Art" v
+  GROUP BY v.source;
+
+ALTER TABLE "finnova"."MV_Sources" OWNER TO "FreiburgBill";
+
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="MV_WORD_PEP_ART"></a>
+<div class="TOC1ItemContentHeader">7.5 MV_WORD_PEP_ART</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">Shows alert words and their associated PEPs position in an article along with the article title, polarity, and url.</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE MATERIALIZED VIEW "finnova"."MV_WORD_PEP_ART" AS
+	SELECT aw.word,
+    awa."AW_POS",
+    p."ID" AS pep_id,
+    p.searchname,
+    awa."PEP_POS",
+    (awa."AW_POS" - awa."PEP_POS") AS score,
+    a.title,
+    a.publishedat,
+    a.polarity,
+    a."ID" AS art_id,
+    a.url,
+    a.category,
+    a.author,
+    a.shares
+   FROM (((finnova."ALERTWORDS_ART" awa
+     LEFT JOIN finnova."ALERT_WORDS" aw ON ((awa."AW_ID" = aw."ID")))
+     LEFT JOIN finnova."MV_PEP" p ON ((awa."PEP_ID" = p."ID")))
+     LEFT JOIN finnova."MV_ART" a ON ((awa."ART_ID" = a."ID")));
+
+COMMENT ON VIEW "finnova"."MV_WORD_PEP_ART" IS 'Shows alert words and their associated PEPs position in an article along with the article title, polarity, and url.';
+
+
+ALTER TABLE "finnova"."MV_WORD_PEP_ART" OWNER TO "FreiburgBill";
+
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="V_PEP_ART2"></a>
+<div class="TOC1ItemContentHeader">7.6 V_PEP_ART2</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Description</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Annotation</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Comment</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Owner</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">FreiburgBill</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Create SQL</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE OR REPLACE VIEW "finnova"."V_PEP_ART2" AS
+	SELECT p."Name",
+    (a.data ->> 'url'::text) AS url,
+    (a.data ->> 'title'::text) AS title,
+    (lower(a.body) ~ similar_escape((((('%(bestechung|geldwäsche|korruption|schmiergelder|waffenhandel|'::text || 'drogenhandel|steuerhinterziehung|umweltverschmutzung|blutdiamanten|'::text) || 'scheeballsysteme|insiderhandel|vorteilsnahme|ungetreue geschäftsführung|'::text) || 'käuflich|schwarze kasse|schwarzgeld|veruntreuung|unterschlagung|beeinflussung|'::text) || 'Ponzi|betrug)%'::text), NULL::text)) AS alert,
+    ((a.data -> 'source'::text) ->> 'title'::text) AS source,
+    (a.data ->> 'dateTime'::text) AS publishedat,
+    pa."PEP_ID",
+    pa."ART_ID",
+    a.data
+   FROM ((finnova."PEP" p
+     LEFT JOIN finnova."PEP_ART" pa ON ((p."ID" = pa."PEP_ID")))
+     LEFT JOIN finnova."Art" a ON ((pa."ART_ID" = a."ID")));
+
+ALTER TABLE "finnova"."V_PEP_ART2" OWNER TO "FreiburgBill";
+
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+</body></html>
